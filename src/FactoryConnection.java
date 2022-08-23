@@ -5,7 +5,8 @@ import java.sql.SQLException;
 public class FactoryConnection {
 
     public static Connection getConnection(){
-        final String addressJdbcConnection = "jdbc:mysql://localhost?verifyServerCertificate=false&useSSL=true";
+        final String addressJdbcConnection = "jdbc:mysql://localhost/course_java?verifyServerCertificate=false&useSSL" +
+                "=true";
         final String userJdbcConnection = "root";
         final String passwordJdbcConnection = "";
 
