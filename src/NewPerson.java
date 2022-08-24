@@ -16,7 +16,7 @@ public class NewPerson {
         final String sqlCommand = "INSERT INTO people (person_name) VALUES (?)";
         PreparedStatement factoryPreparedStatement = factoryConnection.prepareStatement(sqlCommand);
         factoryPreparedStatement.setString(1, personName);
-        factoryPreparedStatement.setInt(2,100);
+
         factoryPreparedStatement.execute();
 
         System.out.println("Person successfully added.");
