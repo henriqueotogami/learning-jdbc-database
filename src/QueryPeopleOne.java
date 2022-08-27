@@ -7,6 +7,12 @@ import java.util.List;
 
 public class QueryPeopleOne {
 
+    static List<Person> people = new ArrayList<>();
+
+    public static List<Person> getPeople() { return people; }
+
+    public static void setPeople(final Person people) { QueryPeopleOne.people.add(people);}
+
     public static void main(String[] args) throws SQLException {
 
         Connection factoryConnection = FactoryConnection.getConnection();
@@ -15,20 +21,18 @@ public class QueryPeopleOne {
         Statement statementFactoryConnection = factoryConnection.createStatement();
         ResultSet queryResult = statementFactoryConnection.executeQuery(sqlCommand);
 
-        List<Person> people = new ArrayList<>();
+
         while(queryResult.next()) {
             int code = queryResult.getInt("person_code");
             String name = queryResult.getString("person_name");
-            people.add(new Person(code, name));
+            setPeople(new Person(code, name));
         }
 
-        for(Person person: people) {
+        for(Person person: getPeople()) {
             System.out.println(person.getCode() + " ==> " + person.getName());
         }
 
         statementFactoryConnection.close();
         factoryConnection.close();
-
-
     }
 }
