@@ -7,11 +7,10 @@ public class QueryPeopleTwo {
 
     public static void main(String[] args)  throws SQLException {
 
-        new QueryPeopleOne();
-        for(Person person: QueryPeopleOne.getPeople()) {
-            System.out.println(person.getCode() + " ==> " + person.getName());
-        }
+        QueryPeopleOne queryPeopleOne = new QueryPeopleOne();
+        queryPeopleOne.processQueryPeopleOne();
 
+        System.out.println("QueryPeopleTwo: BEGIN");
         Connection factoryConnection = FactoryConnection.getConnection();
         String sqlCommand = "SELECT * FROM people WHERE person_name like ?";
         PreparedStatement prepStatFactoryConnection = factoryConnection.prepareStatement(sqlCommand);
@@ -35,5 +34,6 @@ public class QueryPeopleTwo {
 
         prepStatFactoryConnection.close();
         factoryConnection.close();
+        System.out.println("QueryPeopleTwo: END");
     }
 }

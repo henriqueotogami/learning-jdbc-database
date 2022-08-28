@@ -15,6 +15,11 @@ public class QueryPeopleOne {
 
     public static void main(String[] args) throws SQLException {
 
+        processQueryPeopleOne();
+    }
+
+    public static void processQueryPeopleOne() throws SQLException {
+        System.out.println("QueryPeopleOne: BEGIN");
         Connection factoryConnection = FactoryConnection.getConnection();
         String sqlCommand = "SELECT * FROM people";
 
@@ -34,5 +39,6 @@ public class QueryPeopleOne {
 
         statementFactoryConnection.close();
         factoryConnection.close();
+        System.out.println("QueryPeopleOne: END");
     }
 }
