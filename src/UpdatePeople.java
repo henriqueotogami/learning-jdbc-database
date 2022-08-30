@@ -22,15 +22,18 @@ public class UpdatePeople {
         if(queryResult.next()){
             final Person person = new Person(queryResult.getInt(1), queryResult.getString(2));
             System.out.println("Name: " + person.getName() + " | Code: " + person.getCode());
+            inputUserTyped.nextLine();
 
 
             System.out.println("Type the new name: ");
             final String newPersonName = inputUserTyped.nextLine();
             final String sqlUpdateCommand = "UPDATE people SET person_name = ? WHERE person_code = ?";
+
             prepStatFactoryConnection.close();
             prepStatFactoryConnection = factoryConnection.prepareStatement(sqlUpdateCommand);
             prepStatFactoryConnection.setString(1, newPersonName);
             prepStatFactoryConnection.setInt(2, typedPersonCode);
+            prepStatFactoryConnection.execute();
 
             System.out.println("UPDATE successfully. ");
         }
