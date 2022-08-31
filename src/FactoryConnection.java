@@ -1,22 +1,31 @@
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class FactoryConnection {
 
     public static Connection getConnection(){
-        final String addressJdbcConnection = "jdbc:mysql://localhost/course_java?verifyServerCertificate=false&useSSL" +
-                "=true";
-        final String userJdbcConnection = "root";
-        final String passwordJdbcConnection = "";
-
         try {
+            final Properties factoryProperties = getProperties();
+            final String addressJdbcConnection = factoryProperties.getProperty("database.url");
+            final String userJdbcConnection = factoryProperties.getProperty("database.user");
+            final String passwordJdbcConnection = factoryProperties.getProperty("database.password");
+
             Connection connectionDriverManager =
                     DriverManager.getConnection(addressJdbcConnection, userJdbcConnection, passwordJdbcConnection);
             System.out.println("Connection made successfully.");
             return connectionDriverManager;
-        } catch (SQLException sqlException) {
+        } catch (SQLException | IOException sqlException) {
             throw new RuntimeException(sqlException);
         }
+    }
+
+    private static Properties getProperties() throws IOException {
+        Properties properties = new Properties();
+        String fileDirectory = "/connection.properties";
+        properties.load(FactoryConnection.class.getResourceAsStream(fileDirectory));
+        return properties;
     }
 }

@@ -28,3 +28,6 @@ replay_pid*
 
 # Workspace configuration IntelliJ IDEA
 .idea/*
+
+# Database access
+*.properties
