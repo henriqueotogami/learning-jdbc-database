@@ -6,6 +6,10 @@
 
 <br>
 <br>
+<div align="center">
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/henriquemap/todolistyoutube">
+</div>
+<br>
 <img src="https://img.shields.io/github/issues/henriquemap/learning-jdbc-database">
 <img src="https://img.shields.io/github/forks/henriquemap/learning-jdbc-database">
 <img src="https://img.shields.io/github/stars/henriquemap/learning-jdbc-database">
