@@ -7,7 +7,7 @@
 <br>
 <br>
 <div align="center">
-<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/henriquemap/todolistyoutube">
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/henriquemap/learning-jdbc-database">
 </div>
 <br>
 <img src="https://img.shields.io/github/issues/henriquemap/learning-jdbc-database">
