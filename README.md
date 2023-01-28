@@ -15,6 +15,11 @@
 <img src="https://img.shields.io/github/stars/henriquemap/learning-jdbc-database">
 <img src="https://img.shields.io/github/license/henriquemap/learning-jdbc-database">
 </div>
+<br>
+<div align=center>
+<a href="https://wakatime.com/badge/user/1e53636e-c916-4d50-9ce1-f3ac75a883e3/project/6d2c64ad-2943-4a8d-9c3f-84c965a802f7"><img src="https://wakatime.com/badge/user/1e53636e-c916-4d50-9ce1-f3ac75a883e3/project/6d2c64ad-2943-4a8d-9c3f-84c965a802f7.svg" alt="wakatime"></a>
+</div>
+<br>
 <hr>
 
 Data: 08/01/2023
